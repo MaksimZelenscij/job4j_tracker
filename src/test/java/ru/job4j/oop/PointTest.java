@@ -1,22 +1,28 @@
 package ru.job4j.oop;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
-public class PointTest extends TestCase {
+import static org.junit.Assert.assertEquals;
 
+public class PointTest {
+
+    private static final double DELTA = 0.1;
+
+    @Test
     public void testDistance() {
         Point point = new Point(4, 5);
         Point point2 = new Point(1, 1);
         double actual = point.distance(point2);
         double expected = 5;
-        assertEquals(expected, actual);
+        assertEquals(expected, actual, DELTA);
     }
 
+    @Test
     public void testDistance3d() {
         Point point = new Point(1, 1, 1);
         Point point2 = new Point(2, 2, 2);
         double actual = point.distance(point2);
-        double expected = 1.4142135623730951;
-        assertEquals(expected, actual);
+        double expected = 1.4;
+        assertEquals(expected, actual, DELTA);
     }
 }
