@@ -1,14 +1,14 @@
 package ru.job4j.oop;
 
 public class Reduce {
-    private int[] assortment;
+    private int[] array;
 
     public void to(int[] array) {
-        assortment = array;
+        this.array = array;
     }
 
     public void print() {
-        for (int i : assortment) {
+        for (int i : array) {
             System.out.println(i);
         }
     }
