@@ -6,15 +6,13 @@ import static org.junit.Assert.assertEquals;
 
 public class PointTest {
 
-    private static final double DELTA = 0.1;
-
     @Test
     public void testDistance() {
         Point point = new Point(4, 5);
         Point point2 = new Point(1, 1);
         double actual = point.distance(point2);
         double expected = 5;
-        assertEquals(expected, actual, DELTA);
+        assertEquals(expected, actual, 0.1);
     }
 
     @Test
@@ -23,6 +21,6 @@ public class PointTest {
         Point point2 = new Point(2, 2, 2);
         double actual = point.distance(point2);
         double expected = 1.4;
-        assertEquals(expected, actual, DELTA);
+        assertEquals(expected, actual, 0.1);
     }
 }
