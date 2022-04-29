@@ -1,7 +1,5 @@
 package ru.job4j.tracker;
 
-import java.util.Objects;
-
 import static java.util.Objects.requireNonNullElseGet;
 
 public class FindByIdAction implements UserAction {
