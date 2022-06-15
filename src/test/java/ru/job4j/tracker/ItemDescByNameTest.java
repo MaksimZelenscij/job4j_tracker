@@ -12,14 +12,14 @@ public class ItemDescByNameTest {
 
     @Test
     public void compareDesc() {
-        Item remont = new Item(2, "Remont");
-        Item dostavka = new Item(4, "Dostavka");
-        Item vozvrat = new Item(3, "Vozvrat");
-        List<Item> items = Arrays.asList(remont, dostavka, vozvrat);
+        Item repair = new Item(2, "Repair");
+        Item delivery = new Item(4, "Delivery");
+        Item complaint = new Item(3, "Complaint");
+        List<Item> items = Arrays.asList(repair, delivery, complaint);
 
         Collections.sort(items, new ItemDescByName());
 
-        List<Item> expected = Arrays.asList(vozvrat, remont, dostavka);
+        List<Item> expected = Arrays.asList(repair, delivery, complaint);
         assertEquals(items, expected);
     }
 }
