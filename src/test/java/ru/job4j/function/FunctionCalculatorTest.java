@@ -28,8 +28,8 @@ public class FunctionCalculatorTest {
 
     @Test
     public void whenPowFunctionThenPowResults() {
-        List<Double> result = diapason(5, 8, x -> Math.pow(x, 3));
-        List<Double> expected = asList(125D, 216D, 343D);
+        List<Double> result = diapason(5, 8, x -> Math.pow(3, x));
+        List<Double> expected = asList(243D, 729D, 2187D);
         assertThat(result, is(expected));
     }
 }
