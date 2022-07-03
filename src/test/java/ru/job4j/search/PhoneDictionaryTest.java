@@ -20,12 +20,32 @@ public class PhoneDictionaryTest {
     }
 
     @Test
-    public void whenNotFoundByName() {
+    public void whenFindByPhone() {
         PhoneDictionary phones = new PhoneDictionary();
         phones.add(
-                new Person("Ivan", "Ivanov", "890709", "Saratov")
+                new Person("Petr", "Arsentev", "534872", "Bryansk")
         );
-        ArrayList<Person> persons = phones.find("Petr");
-        assertThat(persons.size(), is(0));
+        ArrayList<Person> persons = phones.find("534872");
+        assertThat(persons.get(0).getSurname(), is("Arsentev"));
+    }
+
+    @Test
+    public void whenFindBySurname() {
+        PhoneDictionary phones = new PhoneDictionary();
+        phones.add(
+                new Person("Petr", "Arsentev", "534872", "Bryansk")
+        );
+        ArrayList<Person> persons = phones.find("Arsentev");
+        assertThat(persons.get(0).getSurname(), is("Arsentev"));
+    }
+
+    @Test
+    public void whenFindByAddress() {
+        PhoneDictionary phones = new PhoneDictionary();
+        phones.add(
+                new Person("Petr", "Arsentev", "534872", "Bryansk")
+        );
+        ArrayList<Person> persons = phones.find("Bryansk");
+        assertThat(persons.get(0).getSurname(), is("Arsentev"));
     }
 }
