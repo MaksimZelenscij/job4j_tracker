@@ -77,7 +77,6 @@ public class BankService {
      * @return возвращает объект Account или null, если такого пользователя или счета не существует
      */
     public Account findByRequisite(String passport, String requisite) {
-        Account account = null;
         User user = findByPassport(passport);
         if (user != null) {
             return users
